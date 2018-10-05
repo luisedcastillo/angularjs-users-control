@@ -68,7 +68,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
           <!-- Content Header (Page header) -->
-          <section class="content-header">
+          <!-- <section class="content-header">
   
             <h1>
               {{ titulo }}
@@ -76,9 +76,10 @@
             </h1>
   
           </section>
-  
+   -->
           <!-- Main content -->
-          <section class="content" ng-view>
+          <!-- ng-view -->
+          <section class="content" >
 
             <h1>
               Page Header
@@ -86,6 +87,7 @@
             </h1>
               <div class="container" ng-controller="AppController as vm">
                   {{vm.test}} {{1+2}}
+                  <pre>{{vm.config | json}}</pre>
           </div>
             
             <!-- 
@@ -104,11 +106,11 @@
         <footer class="main-footer">
           <!-- To the right -->
           <div class="pull-right hidden-xs">
-            {{ config.version }}
+            {{ vm.config.version }}
           </div>
           <!-- Default to the left -->
           <strong>Copyright &copy; {{ config.anio }} 
-           {{config.empresa}}.
+           {{ vm.config.empresa }}.
           </strong> Derechos reservados.
         </footer>
     </div><!-- ./wrapper -->
@@ -121,9 +123,13 @@
 
     <!-- App Modules-->
     <script src="app/app.module.js"></script>
+    <script src="app/services/services.module.js"></script>
 
     <!-- App Controllers -->
     <script src="app/app.controller.js"></script>
+
+    <!-- App Services -->
+    <script src="app/services/config.service.js"></script>
 
     <!--Bootstrap 4-->
     <script src="node_modules/jquery/dist/jquery.min.js" ></script>

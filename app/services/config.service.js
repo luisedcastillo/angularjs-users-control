@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('services')
+        .module('userControl.services')
         .factory('configService', configService);
 
-    configService.$inject = [$q, $http];
+    configService.$inject = ['$http', '$q'];
 
-    function configService($q, $http){
+    function configService($http, $q){
         var service = {
             config: {},
             load: load
@@ -21,15 +21,15 @@
             var defer = $q.defer();
 
             $http.get('config.json')
-                .then(function success(data){
-                    service.config = data;
+                .then(function success(response){
+                    service.config = response.data;
                     defer.resolve();
                 },
                 function error(error){
                     defer.reject(error);
                 });
 
-            return defer;
+            return defer.promise;
         }
     }
 })();
