@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="node_modules/ionicons/dist/css/ionicons.min.css">
     <link rel="stylesheet" href="styles/AdminLTE.min.css">
     
+    <link rel="stylesheet" href="styles/skins/skin-purple.min.css">
+
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body ng-controller="AppController as vm" class="hold-transition skin-green sidebar-mini">
+<body ng-controller="AppController as vm" class="hold-transition skin-purple sidebar-mini">
     <div class="wrapper">
 
         <!-- Main Header -->
@@ -78,6 +80,10 @@
           <!-- Main content -->
           <section class="content" ng-view>
 
+            <h1>
+              Page Header
+              <small>Optional description</small>
+            </h1>
               <div class="container" ng-controller="AppController as vm">
                   {{vm.test}} {{1+2}}
           </div>
@@ -108,10 +114,7 @@
     </div><!-- ./wrapper -->
 
     
-    <!--Bootstrap 4-->
-    <script src="node_modules/jquery/dist/jquery.min.js" ></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
 
     <!--Angular JS-->
     <script src="node_modules/angular/angular.min.js"></script>
@@ -121,7 +124,11 @@
 
     <!-- App Controllers -->
     <script src="app/app.controller.js"></script>
-    
 
+    <!--Bootstrap 4-->
+    <script src="node_modules/jquery/dist/jquery.min.js" ></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
